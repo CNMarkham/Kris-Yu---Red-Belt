@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Throwable : MonoBehaviour
 {
     public GameObject objectThrown;
     public Vector3 offset;
     public int throwableCounter = 0;
-
+    public Text collectableCounter;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("ThrowingObject"))
         {
             throwableCounter += 1;
+            collectableCounter.text = throwableCounter.ToString();
             Destroy(collision.gameObject);
         }
     }
@@ -27,6 +29,7 @@ public class Throwable : MonoBehaviour
 
             Instantiate(objectThrown, throwablePosition, transform.rotation);
             throwableCounter -= 1;
+            collectableCounter.text = throwableCounter.ToString();
         }
     }
 }

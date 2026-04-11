@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2006081466200390249}
   - component: {fileID: 2006081466200390248}
   - component: {fileID: -1229098050986992871}
-  - component: {fileID: -65666786586736426}
+  - component: {fileID: -5709864619152114492}
   m_Layer: 0
-  m_Name: shuriken
+  m_Name: collectibleShurikan
   m_TagString: ThrowingObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2006081466200390246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0576825, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.0576825, y: 0, z: -5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.72, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &-65666786586736426
+--- !u!114 &-5709864619152114492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,8 +140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2006081466200390246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04274cf03cd284a478ce23ee5c0a19ee, type: 3}
+  m_Script: {fileID: 11500000, guid: e8ed18dd05b21f544846adaa3a746afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  direction: {fileID: 0}
+  objectThrown: {fileID: 2006081466200390246, guid: 0f4204000f1e3f546968ea1a535df96c, type: 3}
+  offset: {x: 0, y: 0, z: 0}
+  throwableCounter: 0

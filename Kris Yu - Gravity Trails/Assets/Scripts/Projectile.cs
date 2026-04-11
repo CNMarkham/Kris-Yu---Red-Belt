@@ -16,5 +16,14 @@ public class Projectile : MonoBehaviour
     void Update()
     {
         transform.position += direction.offset * Time.deltaTime * speed;
+        Destroy(gameObject, 3f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
