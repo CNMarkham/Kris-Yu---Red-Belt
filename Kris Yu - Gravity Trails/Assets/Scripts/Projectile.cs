@@ -23,7 +23,13 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Teleport teleportScript = Object.FindAnyObjectByType<Teleport>();
+            if (teleportScript != null)
+            {
+                teleportScript.ReduceCount();
+            }
             Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
 }

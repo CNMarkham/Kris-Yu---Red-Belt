@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
-
     public int minimumPosition;
     public int maximumPosition;
+
     private void FixedUpdate()
     {
         if (transform.position.x <= minimumPosition || transform.position.x >= maximumPosition)
@@ -19,7 +19,5 @@ public class EnemyMovement : MonoBehaviour
         float newzPosition = -5;
         Vector3 newPosition = new Vector3(newXPosition, newYPosition, newzPosition);
         transform.position = newPosition;
-
-
     }
 }
