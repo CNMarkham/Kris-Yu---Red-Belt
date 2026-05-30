@@ -5,6 +5,7 @@ using UnityEngine;
 public class checkpointCollision : MonoBehaviour
 {
     public bool didCollide; //true or false variable thingy
+    public CheckpointCounter count;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class checkpointCollision : MonoBehaviour
         if (other.gameObject.tag == "Player" && didCollide == false) //check if codey collided with the game object and if the didCollide variable is false
         {
             didCollide = true; //if both conditions are met, set didCollide to true
+            count.triggeredCheckpoints++;
         }
     }
 }
