@@ -8,6 +8,7 @@ TagManager:
   - itemBoxes
   - shells
   - obstacles
+  - terrain
   layers:
   - Default
   - TransparentFX
