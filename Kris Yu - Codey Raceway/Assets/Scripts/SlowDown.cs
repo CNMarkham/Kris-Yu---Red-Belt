@@ -6,10 +6,16 @@ public class SlowDown : MonoBehaviour
 {
     public float Speed = 15f;
 
-    void Start()
+    IEnumerator Start()
     {
-        Speed = 2f;
+        Speed = 1f;
+        yield return new WaitForSeconds(5f);
         RegularSpeed();
+    }
+
+    private void Update()
+    {
+        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
     }
 
     void RegularSpeed()

@@ -12,6 +12,13 @@ public class TimersCountdown : MonoBehaviour
     public float totalCountdownTime;
     public CodeyMove codeySpeed;
 
+    public GameObject YouLost;
+
+    private void Start()
+    {
+        YouLost.SetActive(false);
+    }
+
     void Update()
     {
         if (totalCountdownTime > 0)
@@ -24,9 +31,9 @@ public class TimersCountdown : MonoBehaviour
             codeySpeed.Speed = 25;
             totalLapTime -= Time.deltaTime;
         }
-        if (totalCountdownTime < 0)
+        if (totalLapTime <= 0)
         {
-            print("Time is up");
+            YouLost.SetActive(true);
         }
 
         lapTime.text = Mathf.Round(totalLapTime).ToString();

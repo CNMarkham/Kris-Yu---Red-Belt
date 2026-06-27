@@ -5,6 +5,12 @@ using UnityEngine;
 public class TriggerFinishLine : MonoBehaviour
 {
     public CheckpointCounter checkpointTracker;
+    public GameObject YouWin;
+
+    private void Start()
+    {
+        YouWin.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +19,7 @@ public class TriggerFinishLine : MonoBehaviour
             if (checkpointTracker.triggeredCheckpoints == checkpointTracker.numberOfCheckpoints)
             {
                 print("You Win!");
+                YouWin.SetActive(true);
             }
             else
             {
